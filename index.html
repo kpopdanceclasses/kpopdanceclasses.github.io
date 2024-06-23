@@ -10,8 +10,19 @@
     <!-- Bootstrap -->
     <link href="bootstrap.min.css" rel="stylesheet" media="screen">
     <style>
+      @keyframes fade-in {
+      from{
+        opacity:0;
+      }
+      to{
+        opacity: 1;
+      }
+      }
+    .rizzgod{
+      animation: fade-in 2s ease-in-out;
+    }
       body{
-        background-color:#FCEBEF;
+        background-color:#fadce8;
       }
 
 .nunito{
@@ -20,404 +31,105 @@
   font-weight: 500;
   font-style: normal;
 }
-      #rizz{
-        color:black;
+      .rizz{
+        color:rgb(83, 70, 70);
       }
-      // color pallets main
-
-$white        : #ffffff;
-$primary      : #02A695;
-$light-primary: #D6FDF5;
-
-// font weight
-$weight: 700;
-
-// padding
-$mobile-pad: 0 15px 0 15px;
-
-// 768px mobile responsive
-.offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl {
-  --bs-offcanvas-zindex: 1045;
-  --bs-offcanvas-width: 249px;
+#rizzlord{
+  top: 10px;
+  right: 10px;
+  position: absolute;
 }
-
-.offcanvas {
-  .offcanvas-header {
-    width: 100%;
-    img {
-      display: block;
-      margin: auto;
-      width: 150px;
-    }
-  }
-  .offcanvas-body {
-    .nav-link {
-      font-size: 17px;
-      font-weight: $weight;
-      color: black;
-      &:hover{
-        color: $primary;
-      }
-    }
-  }
+#navbarTogglerDemo03{
+  top: 10px;
+  right: 10px;
+  position: absolute;  
 }
-
-// main class header
-.nav-list {
-  display: none;
+#sigmalord{
+  background-image:url(output-onlinepngtools.png);
+  background-blend-mode:lighten;
+  background-size: cover;
 }
-
-.active-btn {
-  display: flex !important;
-}
-
-.navbar {
-  .nav-list {
-    .nav-link {
-      font-size: 17px;
-      font-weight: $weight;
-      color: #000000;
-
-      &:hover {
-        color: $primary;
-      }
-    }
-  }
-}
-
-// responsive header navbar
-@media screen and (max-width: 800px) {
-  .navbar {
-    .nav-list {
-      .nav-link {
-        font-size: 15px;
-        font-weight: 500;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 686px) {
-  .navbar {
-    .nav-list {
-      .nav-link {
-        font-size: 13px;
-        font-weight: 500;
-      }
-    }
-  }
-  header {
-    .ham-menu {
-      padding: 30px;
-      transform: scale(50%);
-
-      .bar {
-        width: 20px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 520px) {
-  .navbar {
-    .nav-list {
-      .nav-link {
-        font-size: 9px;
-        font-weight: 500;
-      }
-    }
-  }
-  header {
-    .ham-menu {
-      padding: 10px;
-      transform: scale(50%);
-
-      .bar {
-        width: 20px;
-      }
-    }
-  }
-}
-
-header {
-  .logo {
-    padding: 40px;
-    img {
-
-    }
-  }
-
-  .ham-menu {
-    padding: 55px 55px 55px 35px;
-
-    .menu-social {
-      position: absolute;
-      display: block;
-      margin: auto;
-
-      .menu-instagram {
-        margin: 23px 8px 0 2px;
-        transition: 200ms;
-        filter: grayscale(0.90);
-        opacity: 0.5;
-
-        &:hover {
-          transform: scale(105%);
-          filter: grayscale(0);
-          opacity: 1;
-        }
-      }
-
-      .menu-linkedin {
-        margin: 19px 8px 0 2px;
-        transition: 200ms;
-        filter: grayscale(0.90);
-        opacity: 0.5;
-
-        &:hover {
-          transform: scale(105%);
-          filter: grayscale(0);
-          opacity: 1;
-        }
-      }
-    }
-
-    input {
-      -webkit-appearance: none;
-      display: none;
-      visibility: hidden;
-    }
-
-    .bar {
-      display: block;
-      position: relative;
-      cursor: pointer;
-      width: 50px;
-      height: 40px;
-
-      &:hover {
-        span {
-          background: $primary;
-        }
-      }
-
-      span {
-        position: absolute;
-        width: 45px;
-        height: 7px;
-        background: black;
-        border-radius: 100px;
-        display: inline-block;
-        transition: 0.3s ease;
-        left: 0;
-      }
-
-      span.top {
-        top: 0;
-      }
-
-      span.middle {
-        top: 17px;
-      }
-
-      span.bottom {
-        bottom: 0;
-      }
-    }
-
-    input[type] {
-      &:checked {
-        ~ {
-          span.top {
-            transform: rotate(45deg);
-            transform-origin: top left;
-            width: 48px;
-            left: 5px;
-          }
-
-          span.bottom {
-            transform: rotate(-45deg);
-            transform-origin: top left;
-            width: 48px;
-            bottom: -1px;
-          }
-
-          span.middle {
-            transform: translateX(-20px);
-            opacity: 0;
-          }
-        }
-      }
-    }
-  }
-
-  //  menu social
-
-
-  .ham-active {
-    position: relative;
-    width: 400px;
-
-    ul {
-      position: absolute;
-      list-style: none;
-
-      li {
-        display: inline-block;
-      }
-    }
-  }
-
-  //  menu social
-}
-
-// header hamburger button
-
-.navbar-toggler{
-  border: none !important;
-  span{
-    color: black !important;
-  }
-}
-
-.mobile-menu-social{
-  .mobile-social-icon{
-    img{
-      margin: 23px 8px 0 2px;
-      transition: 200ms;
-      filter: grayscale(0.90);
-      opacity: 0.5;
-      &:hover{
-        transform: scale(105%);
-        filter: grayscale(0);
-        opacity: 1;
-      }
-    }
-  }
+#sigmalordrizz{
+  background-color: rgb(255, 249, 249);
 }
 
     </style>
   </head>
   <body>
 <!-- EDIT BELOW -->
-<nav class="navbar navbar-expand-md">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
-            aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+
+<script src="navbar.js"></script>
 
 
-    <!--            hamburger menu-->
-    <div class="navbar-menu d-none d-md-block text-end" href="#">
-      <div class="ham-menu">
-        <label class="bar" for="check">
-          <input type="checkbox" id="check">
-          <span class="top"></span>
-          <span class="middle"></span>
-          <span class="bottom"></span>
-        </label>
-        <div class="menu-social">
-          <div class="menu-instagram">
-          
-          </div>
-          <div class="menu-linkedin">
-          </div>
-        </div>
-      </div>
+
+  <div class= "container-fluid text-center pt-5 pb-5" style="margin-top: 15vh;" id="sigmalord"> 
+    <p class= "display-1 nunito rizz" id="rizz">STEY K-POP</p>
+    <p class="display-6 nunito rizz">Dance Classes</p>
+</div>  
+
+<div class= "row"id="sigmalordrizz">
+
+
+
+<div class="col-md-6 px-5 pt-5 mb-5"  style="height: 100vh;">
+  <div class="container text-start"> 
+    <p class="display-6 rizz nunito">What is K-Pop Dance?</p>
+    <p class="rizz nunito rizzgod">K-pop dance is a dance style that combines elements of hip-hop and jazz, choreographed to Korean pop music. </p>
     </div>
-    <!--            hamburger menu-->
+</div>
+<div class="col-md-6">
+  wsedcrfvgbhnjmnhgbfvdcsexwasedrftgbyhu
+</div>  
 
-    <!--                navbar menu-->
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-      <ul class="nav-list navbar-nav me-auto mb-2 mb-lg-0">
 
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="home.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about-trend">
-          About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#page-links">
-          Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-      </ul>
-    </div>
-    <!--                navbar menu-->
 
-    <div class="logo-box">
-      <!--                    logo-->
-    </div>
-    <div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="offcanvasDarkNavbar"
-         aria-labelledby="offcanvasDarkNavbarLabel">
-      <div class="offcanvas-header">
-        <div class="offcanvas-title" id="offcanvasDarkNavbarLabel">
-          <img src="assets/img/logo.svg" alt="">
-        </div>
-        <button type="button" class="btn-close btn-close" data-bs-dismiss="offcanvas"
-                aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="home.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about-trend">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#page-links">
-              Services
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">
-              Contact
-            </a>
-          </li>
-          <li class="nav-item">
-            &nbsp;
-          </li>
-          <div class="mobile-menu-social">
-            <div class="mobile-social-icon">
-              
-            </div>
-          </div>
-        </ul>
-      </div>
-    </div>
 
+
+<hr>
+
+
+
+
+<div class="col-md-6">
+  wsedcrfvgbhnjmnhgbfvdcsexwasedrftgbyhu
+</div>  
+<div class="col-md-6 px-5 pt-5 mb-5"  style="height: 100vh;">
+
+<div class="container text-end"> 
+  <p class="display-6 rizz nunito">Class Description</p>
+  <p class="rizz nunito rizzgod">Each dance class will be 1 hour long, and you will learn the chorus (and dance break) of the song listed on our schedule. <br><br>The dance class will also include individual coaching and tips on how to improve your dancing. <br> <br>We encourage not only high school students, but people of all ages to participate! <br><br> You don’t need to have any dance experience, and it will be a safe place for everyone! <br><br> Let’s have some fun!
+  </p>
   </div>
-</nav>
-    <div class= "container text-center mt-5">
-
-        <p class= "display-1 nunito" id="rizz">STEY K-POP</p>
-        <p class="display-6 nunito">Dance Classes</p>
-      
-    </div>
+</div>
   
 
 
-    
+
+
+<hr>
+
+
+
+
+<div class="col-md-6 px-5 pt-5 mb-5"  style="height: 100vh;">
+  <div class="container text-start"> 
+    <p class="display-6 rizz nunito">About Us</p>
+    <p class="rizz nunito rizzgod">Elsa and I are high schoolers with dance experience in the genre.<br><br>Throughout our years of dancing, we developed a deep passion and strive to spread it with people around us.<br><br>50% of our earnings will also go to charity to better not only our community, but the world as well. 
+    </p>
+    </div>
+</div>
+<div class="col-md-6">
+  wsedcrfvgbhnjmnhgbfvdcsexwasedrftgbyhu
+</div>  
+</div>
+
 <!-- EDIT ABOVE -->
     <script src="bootstrap.min.js"></script>
+
     <script>
 
 
-$(function () {
-    $(".ham-menu input").bind('click', function () {
-        console.log('click');
-        $('this').toggleClass('active-btn');
-        $('.nav-list').toggleClass('active-btn');
 
-    });
-});
     </script>
 
     
