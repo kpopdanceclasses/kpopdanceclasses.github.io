@@ -5,7 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" rel="stylesheet">
-    <title>STEY K-pop - Dance Classes</title>
+    <title>STEY K-Pop - Dance Classes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="bootstrap.min.css" rel="stylesheet" media="screen">
@@ -23,12 +23,392 @@
       #rizz{
         color:black;
       }
+      // color pallets main
+
+$white        : #ffffff;
+$primary      : #02A695;
+$light-primary: #D6FDF5;
+
+// font weight
+$weight: 700;
+
+// padding
+$mobile-pad: 0 15px 0 15px;
+
+// 768px mobile responsive
+.offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl {
+  --bs-offcanvas-zindex: 1045;
+  --bs-offcanvas-width: 249px;
+}
+
+.offcanvas {
+  .offcanvas-header {
+    width: 100%;
+    img {
+      display: block;
+      margin: auto;
+      width: 150px;
+    }
+  }
+  .offcanvas-body {
+    .nav-link {
+      font-size: 17px;
+      font-weight: $weight;
+      color: black;
+      &:hover{
+        color: $primary;
+      }
+    }
+  }
+}
+
+// main class header
+.nav-list {
+  display: none;
+}
+
+.active-btn {
+  display: flex !important;
+}
+
+// main class header
+
+// header navbar
+.navbar {
+  .nav-list {
+    .nav-link {
+      font-size: 17px;
+      font-weight: $weight;
+      color: #000000;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
+// responsive header navbar
+@media screen and (max-width: 800px) {
+  .navbar {
+    .nav-list {
+      .nav-link {
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 686px) {
+  .navbar {
+    .nav-list {
+      .nav-link {
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+  }
+  header {
+    .ham-menu {
+      padding: 30px;
+      transform: scale(50%);
+
+      .bar {
+        width: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .navbar {
+    .nav-list {
+      .nav-link {
+        font-size: 9px;
+        font-weight: 500;
+      }
+    }
+  }
+  header {
+    .ham-menu {
+      padding: 10px;
+      transform: scale(50%);
+
+      .bar {
+        width: 20px;
+      }
+    }
+  }
+}
+
+// responsive header navbar
+// header navbar
+
+// header hamburger button
+header {
+  .logo {
+    padding: 40px;
+    img {
+
+    }
+  }
+
+  .ham-menu {
+    padding: 55px 55px 55px 35px;
+
+    .menu-social {
+      position: absolute;
+      display: block;
+      margin: auto;
+
+      .menu-instagram {
+        margin: 23px 8px 0 2px;
+        transition: 200ms;
+        filter: grayscale(0.90);
+        opacity: 0.5;
+
+        &:hover {
+          transform: scale(105%);
+          filter: grayscale(0);
+          opacity: 1;
+        }
+      }
+
+      .menu-linkedin {
+        margin: 19px 8px 0 2px;
+        transition: 200ms;
+        filter: grayscale(0.90);
+        opacity: 0.5;
+
+        &:hover {
+          transform: scale(105%);
+          filter: grayscale(0);
+          opacity: 1;
+        }
+      }
+    }
+
+    input {
+      -webkit-appearance: none;
+      display: none;
+      visibility: hidden;
+    }
+
+    .bar {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      width: 50px;
+      height: 40px;
+
+      &:hover {
+        span {
+          background: $primary;
+        }
+      }
+
+      span {
+        position: absolute;
+        width: 45px;
+        height: 7px;
+        background: black;
+        border-radius: 100px;
+        display: inline-block;
+        transition: 0.3s ease;
+        left: 0;
+      }
+
+      span.top {
+        top: 0;
+      }
+
+      span.middle {
+        top: 17px;
+      }
+
+      span.bottom {
+        bottom: 0;
+      }
+    }
+
+    input[type] {
+      &:checked {
+        ~ {
+          span.top {
+            transform: rotate(45deg);
+            transform-origin: top left;
+            width: 48px;
+            left: 5px;
+          }
+
+          span.bottom {
+            transform: rotate(-45deg);
+            transform-origin: top left;
+            width: 48px;
+            bottom: -1px;
+          }
+
+          span.middle {
+            transform: translateX(-20px);
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+
+  //  menu social
+
+
+  .ham-active {
+    position: relative;
+    width: 400px;
+
+    ul {
+      position: absolute;
+      list-style: none;
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+
+  //  menu social
+}
+
+// header hamburger button
+
+.navbar-toggler{
+  border: none !important;
+  span{
+    color: black !important;
+  }
+}
+
+.mobile-menu-social{
+  .mobile-social-icon{
+    img{
+      margin: 23px 8px 0 2px;
+      transition: 200ms;
+      filter: grayscale(0.90);
+      opacity: 0.5;
+      &:hover{
+        transform: scale(105%);
+        filter: grayscale(0);
+        opacity: 1;
+      }
+    }
+  }
+}
 
     </style>
   </head>
   <body>
 <!-- EDIT BELOW -->
+<nav class="navbar navbar-expand-md">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+
+    <!--            hamburger menu-->
+    <div class="navbar-menu d-none d-md-block" href="#">
+      <div class="ham-menu">
+        <label class="bar" for="check">
+          <input type="checkbox" id="check">
+          <span class="top"></span>
+          <span class="middle"></span>
+          <span class="bottom"></span>
+        </label>
+        <div class="menu-social">
+          <div class="menu-instagram">
+            <a href="https://github.com/YasinDehfuli"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="40" alt=""></a>
+          </div>
+          <div class="menu-linkedin">
+            <a href="https://www.linkedin.com/in/yasin-dehfuli/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png" width="40" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--            hamburger menu-->
+
+    <!--                navbar menu-->
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="nav-list navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about-trend">
+          About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#page-links">
+          Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <!--                navbar menu-->
+
+    <div class="logo-box">
+      <!--                    logo-->
+      <a class="logo" href="https://github.com/4xmen">
+        <img src="https://i.postimg.cc/VvQy4WyS/4xmen-logo.png" width="50" alt="">
+      </a>
+      <!--                    logo-->
+    </div>
+    <div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="offcanvasDarkNavbar"
+         aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <div class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+          <img src="assets/img/logo.svg" alt="">
+        </div>
+        <button type="button" class="btn-close btn-close" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about-trend">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#page-links">
+              Services
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">
+              Contact
+            </a>
+          </li>
+          <li class="nav-item">
+            &nbsp;
+          </li>
+          <div class="mobile-menu-social">
+            <div class="mobile-social-icon">
+              <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/800px-Instagram_logo_2016.svg.png" width="40" alt=""></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png" width="40" alt=""></a>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</nav>
     <div class= "container text-center">
 
         <p class= "display-1 nunito" id="rizz">K-pop Dance Classes</p>
@@ -43,7 +423,14 @@
     <script>
 
 
-      
+$(function () {
+    $(".ham-menu input").bind('click', function () {
+        console.log('click');
+        $('this').toggleClass('active-btn');
+        $('.nav-list').toggleClass('active-btn');
+
+    });
+});
     </script>
 
     
